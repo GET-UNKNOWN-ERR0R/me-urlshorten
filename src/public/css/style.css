@@ -1,0 +1,457 @@
+/* =====================
+   CSS RESET & BASE
+===================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6366f1;
+    --secondary: #4f46e5;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --gray: #64748b;
+    --card: #ffffff;
+}
+
+body {
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont;
+    font-family: 'Poppins', sans-serif;
+
+    background: radial-gradient(circle at top, #eef2ff, #f8fafc);
+    color: var(--dark);
+    min-height: 100vh;
+}
+
+/* =====================
+     NAVBAR
+  ===================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 8%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+}
+
+.navbar-inner {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+.navbar h2 a {
+    text-decoration: none;
+    /* color: var(--dark); */
+    font-weight: 700;
+}
+
+.navbar a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--gray);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary);
+}
+
+/* =====================
+     CONTAINER
+  ===================== */
+.container {
+    max-width: 800px;
+    /* margin: auto; */
+    padding: 60px 20px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.container h2{
+    color: var(--gray);
+    padding-left: 10px;
+
+       
+}
+/* =====================
+     HOME CARD
+  ===================== */
+form {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+    max-width: 500px;
+    margin: auto;
+}
+
+form h1 {
+    margin-bottom: 10px;
+}
+
+form p {
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.3);
+}
+
+/* =========================
+   SUCCESS PAGE – PREMIUM UI
+   ========================= */
+
+.success-box {
+    max-width: 520px;
+    margin: 80px auto;
+    padding: 32px 28px;
+    /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+    border-radius: 16px;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.success-box h2 {
+    font-size: clamp(1.6rem, 4vw, 2.1rem);
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Short Link */
+.short-link {
+    display: block;
+    margin: 14px auto 26px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    color: #00eaff;
+    color: var(--primary);
+
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    font-weight: 500;
+    text-decoration: none;
+    word-break: break-all;
+    transition: all 0.3s ease;
+}
+
+.short-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    /* color: #ffffff; */
+    color: green;
+
+}
+
+/* Buttons Wrapper */
+.success-box .actions {
+    /* display: flex; */
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Base Button */
+.btn {
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Back Button */
+.back-btn {
+    background: rgba(25, 20, 255, 0.15);
+    /* color: #ffffff;
+     */
+     color: var(--gray);
+
+}
+
+ .back-btn:hover {transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 24, 255, 0.1);
+} 
+
+/* Open Button */
+.open-btn {
+    background: rgba(25, 20, 255, 0.15);
+    /* color: var(--primary); */
+    color: var(--gray);
+
+}
+
+ .open-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 24, 255, 0.1);
+} 
+
+/* =========================
+     MOBILE RESPONSIVENESS
+     ========================= */
+@media (max-width: 600px) {
+    .success-box {
+        margin: 50px 16px;
+        padding: 26px 20px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .success-box .actions {
+        display: flex;
+
+    }
+}
+
+/* =====================
+     TABLE (ANALYTICS)
+  ===================== */
+table {
+    width: 100%;
+    background: var(--card);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+thead {
+    background: #eef2ff;
+}
+
+th,
+td {
+    padding: 16px;
+    text-align: left;
+    font-size: 14px;
+}
+
+th {
+    color: var(--gray);
+    font-weight: 600;
+}
+
+td a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+.truncate {
+    max-width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================
+   RESPONSIVE ANALYTICS TABLE
+   ========================= */
+
+/* Wrapper safety */
+table {
+    border-collapse: collapse;
+}
+
+/* Mobile View */
+@media (max-width: 950px) {
+    thead {
+        display: none;
+    }
+
+    table,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    tbody tr {
+        margin-bottom: 16px;
+        background: var(--card);
+        border-radius: 14px;
+        box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+        padding: 12px;
+    }
+
+    td {
+        padding: 10px 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    td:last-child {
+        border-bottom: none;
+    }
+
+    /* Labels */
+    td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--gray);
+        margin-right: 12px;
+        white-space: nowrap;
+    }
+
+    /* Truncate fix */
+    .truncate {
+        max-width: 180px;
+    }
+
+
+    .container h2{
+        margin-bottom: 8px;
+    }
+    
+}
+
+/* =====================
+     CARD (DETAIL PAGE)
+  ===================== */
+.card {
+    max-width: 600px;
+    margin: auto;
+    background: var(--card);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.08);
+}
+
+.card p {
+    margin-bottom: 6px;
+    color: var(--gray);
+}
+#heading2{
+    color: var(--gray);
+}
+
+.back-btn2 {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* =====================
+     404 PAGE
+  ===================== */
+.not-found {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.not-found h1 {
+    font-size: 80px;
+}
+
+.not-found p {
+    margin: 15px 0;
+    color: var(--gray);
+}
+
+/* =====================
+     FOOTER
+  ===================== */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+/* =====================
+     RESPONSIVE
+  ===================== */
+@media (max-width: 950px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    form,
+    .success-box,
+    .card {
+        padding: 25px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+}

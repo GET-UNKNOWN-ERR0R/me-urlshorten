@@ -1,0 +1,26 @@
+<!-- <h2>Short URL Created 🎉</h2>
+<input value="<%= shortUrl %>" readonly />
+<button onclick="navigator.clipboard.writeText('<%= shortUrl %>')">
+  Copy
+</button>
+
+   -->
+
+<%- include("partials/header") %>
+
+    <div class="success-box">
+        <h2>Short URL Created</h2>
+
+        <!-- <p class="label">Your short link:</p> -->
+
+        <a href="<%= shortUrl %>" target="_blank" class="short-link">
+            <%= shortUrl %>
+        </a>
+
+        <div class="actions">
+            <a href="/" class="btn back-btn"> Create Another</a>
+            <a href="<%= shortUrl %>" class="btn open-btn"> Open Link </a>
+        </div>
+    </div>
+
+    <%- include("partials/footer") %>

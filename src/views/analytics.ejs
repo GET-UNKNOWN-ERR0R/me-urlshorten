@@ -1,0 +1,47 @@
+<%- include("partials/header") %>
+
+    <h2>Overview</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Original URL</th>
+                <th>Short URL</th>
+                <th>Clicks</th>
+                <th>Created</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% urls.forEach(url=> { %>
+                <tr>
+
+                    <td data-label="Original URL" class="truncate">
+                        <%= url.originalUrl %>
+                    </td>
+
+                    <td data-label="Short URL">
+                        <a href="/<%= url.shortCode %>" target="_blank">
+                            /<%= url.shortCode %>
+                        </a>
+                    </td>
+
+                    <td data-label="Clicks">
+                        <%= url.clicks %>
+                    </td>
+
+                    <td data-label="Created">
+                        <%= url.createdAt.toDateString() %>
+                    </td>
+
+                    <td data-label="Details">
+                        <a href="/analytics/<%= url.shortCode %>">View</a>
+                    </td>
+
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+
+    <%- include("partials/footer") %>
