@@ -1,0 +1,98 @@
+// sampledata.js
+
+const sampleUrls = [
+    {
+        originalUrl: "https://www.google.com",
+        shortCode: "google",
+        sessionId: "session_123",
+        clicks: 42,
+        lastAccessed: new Date("2026-02-07"),
+        createdAt: new Date("2026-01-20"),
+    },
+    {
+        originalUrl: "https://github.com",
+        shortCode: "github",
+        sessionId: "session_123",
+        clicks: 18,
+        lastAccessed: new Date("2026-02-05"),
+        createdAt: new Date("2026-01-25"),
+    },
+    {
+        originalUrl: "https://stackoverflow.com",
+        shortCode: "stack",
+        sessionId: "session_123",
+        clicks: 65,
+        lastAccessed: new Date("2026-02-08"),
+        createdAt: new Date("2026-01-28"),
+    },
+    {
+        originalUrl: "https://chat.openai.com",
+        shortCode: "chatgpt",
+        sessionId: "session_123",
+        clicks: 101,
+        lastAccessed: new Date("2026-02-08"),
+        createdAt: new Date("2026-02-01"),
+    },
+    {
+        originalUrl: "https://www.youtube.com",
+        shortCode: "yt",
+        sessionId: "session_123",
+        clicks: 88,
+        lastAccessed: new Date("2026-02-06"),
+        createdAt: new Date("2026-02-02"),
+    },
+
+    // 🔹 Different session (analytics test)
+    {
+        originalUrl: "https://twitter.com",
+        shortCode: "twitter",
+        sessionId: "session_456",
+        clicks: 23,
+        lastAccessed: new Date("2026-02-04"),
+        createdAt: new Date("2026-01-29"),
+    },
+    {
+        originalUrl: "https://linkedin.com",
+        shortCode: "linkedin",
+        sessionId: "session_456",
+        clicks: 9,
+        lastAccessed: new Date("2026-02-03"),
+        createdAt: new Date("2026-01-31"),
+    },
+    {
+        originalUrl: "https://medium.com",
+        shortCode: "medium",
+        sessionId: "session_456",
+        clicks: 14,
+        lastAccessed: new Date("2026-02-05"),
+        createdAt: new Date("2026-02-01"),
+    },
+
+    // 🔹 Another session
+    {
+        originalUrl: "https://dev.to",
+        shortCode: "devto",
+        sessionId: "session_789",
+        clicks: 31,
+        lastAccessed: new Date("2026-02-06"),
+        createdAt: new Date("2026-02-02"),
+    },
+    {
+        originalUrl: "https://npmjs.com",
+        shortCode: "npm",
+        sessionId: "session_789",
+        clicks: 27,
+        lastAccessed: new Date("2026-02-07"),
+        createdAt: new Date("2026-02-03"),
+    },
+    {
+        originalUrl: "https://nodejs.org",
+        shortCode: "node",
+        sessionId: "session_789",
+        clicks: 55,
+        lastAccessed: new Date("2026-02-08"),
+        createdAt: new Date("2026-02-04"),
+    },
+];
+
+module.exports = sampleUrls;
