@@ -14,7 +14,7 @@ exports.createShortUrl = async (req, res, next) => {
       return res.render("home", { error: "Invalid URL" });
     }
 
-    let shortCode = customAlias || nanoid(6);
+    const shortCode = customAlias || nanoid(6);
 
     const existing = await Url.findOne({ shortCode });
     if (existing) {
@@ -23,11 +23,12 @@ exports.createShortUrl = async (req, res, next) => {
 
     const url = await Url.create({
       originalUrl,
-      shortCode
+      shortCode,
+      sessionId: req.sessionID,
     });
 
     res.render("success", {
-      shortUrl: `${process.env.BASE_URL}/${url.shortCode}`
+      shortUrl: `${process.env.BASE_URL}/${url.shortCode}`,
     });
   } catch (error) {
     next(error);
@@ -52,13 +53,31 @@ exports.redirectUrl = async (req, res, next) => {
   }
 };
 
-exports.analytics = async (req, res) => {
-  const urls = await Url.find().sort({ createdAt: -1 });
-  res.render("analytics", { urls });
+exports.analytics = async (req, res, next) => {
+  try {
+    const urls = await Url.find({
+      sessionId: req.sessionID,
+    }).sort({ createdAt: -1 });
+
+    res.render("analytics", { urls });
+  } catch (error) {
+    next(error);
+  }
 };
 
-exports.analyticsDetail = async (req, res) => {
-  const url = await Url.findOne({ shortCode: req.params.shortCode });
-  if (!url) return res.render("404");
-  res.render("analytics-detail", { url });
+exports.analyticsDetail = async (req, res, next) => {
+  try {
+    const url = await Url.findOne({
+      shortCode: req.params.shortCode,
+      sessionId: req.sessionID,
+    });
+
+    if (!url) {
+      return res.status(404).render("404");
+    }
+
+    res.render("analytics-detail", { url });
+  } catch (error) {
+    next(error);
+  }
 };

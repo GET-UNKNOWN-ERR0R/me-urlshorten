@@ -1,14 +1,15 @@
 <%- include("partials/header") %>
 
+  <form action="/shorten" method="POST">
+    <input name="originalUrl" placeholder="Enter long URL" required />
+    <input name="customAlias" placeholder="Custom alias (optional)" />
+    <button>Shorten</button>
+  </form>
 
-<form action="/shorten" method="POST">
-  <input name="originalUrl" placeholder="Enter long URL" required />
-  <input name="customAlias" placeholder="Custom alias (optional)" />
-  <button>Shorten</button>
-</form>
+  <% if (typeof error !=="undefined" ) { %>
+    <p>
+      <%= error %>
+    </p>
+    <% } %>
 
-<% if (typeof error !== "undefined") { %>
-<p><%= error %></p>
-<% } %>
-
-<%- include("partials/footer") %>
+      <%- include("partials/footer") %>

@@ -1,25 +1,29 @@
 <%- include("partials/header") %>
 
-<h2 id = "heading2">URL Analytics Detail</h2>
+  <h2 id="heading2">URL Analytics Detail</h2>
 
-<div class="card">
-  <p><strong>Original URL:</strong></p>
-  <a href="<%= url.originalUrl %>" target="_blank">
-    <%= url.originalUrl %>
-  </a>
+  <div class="card">
+    <p><strong>Original URL:</strong></p>
+    <a href="<%= url.originalUrl %>" target="_blank">
+      <%= url.originalUrl %>
+    </a>
 
-  <p><strong>Short URL:</strong></p>
-  <a href="/<%= url.shortCode %>" target="_blank">
-    <%= url.shortCode %>
-  </a>
+    <p><strong>Short URL:</strong></p>
+    <a href="/<%= url.shortCode %>" target="_blank">
+      <%= url.shortCode %>
+    </a>
 
-  <p><strong>Total Clicks:</strong> <%= url.clicks %></p>
-  <p><strong>Created At:</strong> <%= url.createdAt.toLocaleString() %></p>
-  <p><strong>Last Accessed:</strong>
-    <%= url.lastAccessed ? url.lastAccessed.toLocaleString() : "Never" %>
-  </p>
-</div>
+    <p><strong>Total Clicks:</strong>
+      <%= url.clicks %>
+    </p>
+    <p><strong>Created At:</strong>
+      <%= url.createdAt.toLocaleString() %>
+    </p>
+    <p><strong>Last Accessed:</strong>
+      <%= url.lastAccessed ? url.lastAccessed.toLocaleString() : "Never" %>
+    </p>
+  </div>
 
-<a href="/analytics" class="back-btn2">⬅ Back to Analytics</a>
+  <a href="/analytics" class="back-btn2">⬅ Back to Analytics</a>
 
-<%- include("partials/footer") %>
+  <%- include("partials/footer") %>

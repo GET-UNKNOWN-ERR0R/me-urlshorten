@@ -7,7 +7,7 @@ const connectDB = async () => {
   while (retries < MAX_RETRIES) {
     try {
       await mongoose.connect(process.env.MONGO_URI, {
-        serverSelectionTimeoutMS: 5000, // wait 5 sec
+        serverSelectionTimeoutMS: 5000, 
       });
 
       console.log("✅ MongoDB Connected");
@@ -24,7 +24,6 @@ const connectDB = async () => {
         process.exit(1);
       }
 
-      // wait before retry
       await new Promise((res) => setTimeout(res, 3000));
     }
   }
