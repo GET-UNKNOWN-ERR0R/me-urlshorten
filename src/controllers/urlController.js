@@ -14,11 +14,16 @@ exports.createShortUrl = async (req, res, next) => {
       return res.render("home", { error: "Invalid URL" });
     }
 
-    const shortCode = customAlias || nanoid(6);
+    let shortCode = customAlias?.trim();
 
-    const existing = await Url.findOne({ shortCode });
-    if (existing) {
-      return res.render("home", { error: "Alias already taken" });
+    if (shortCode) {
+      const existing = await Url.findOne({ shortCode });
+
+      if (existing) {
+        shortCode = nanoid(6);
+      }
+    } else {
+      shortCode = nanoid(6);
     }
 
     const url = await Url.create({
@@ -30,10 +35,12 @@ exports.createShortUrl = async (req, res, next) => {
     res.render("success", {
       shortUrl: `${process.env.BASE_URL}/${url.shortCode}`,
     });
+
   } catch (error) {
     next(error);
   }
 };
+
 
 exports.redirectUrl = async (req, res, next) => {
   try {

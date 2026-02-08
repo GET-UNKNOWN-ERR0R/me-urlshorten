@@ -5,10 +5,12 @@ const urlSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+
   shortCode: {
     type: String,
-    unique: true
-  },
+    unique: true,
+  }
+  ,
   clicks: {
     type: Number,
     default: 0
