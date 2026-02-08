@@ -14,13 +14,21 @@ exports.createShortUrl = async (req, res, next) => {
       return res.render("home", { error: "Invalid URL" });
     }
 
-    let shortCode = customAlias?.trim();
+    let shortCode;
 
-    if (shortCode) {
-      const existing = await Url.findOne({ shortCode });
+    if (customAlias && customAlias.trim() !== "") {
+      shortCode = customAlias.trim();
+
+      // ✅ ONLY check inside SAME SESSION
+      const existing = await Url.findOne({
+        shortCode,
+        sessionId: req.sessionID,
+      });
 
       if (existing) {
-        shortCode = nanoid(6);
+        return res.render("home", {
+          error: "You already used this alias. Try another.",
+        });
       }
     } else {
       shortCode = nanoid(6);
@@ -35,7 +43,6 @@ exports.createShortUrl = async (req, res, next) => {
     res.render("success", {
       shortUrl: `${process.env.BASE_URL}/${url.shortCode}`,
     });
-
   } catch (error) {
     next(error);
   }
